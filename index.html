@@ -16,7 +16,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg);
             color: var(--text-primary);
             line-height: 1.6;
@@ -24,36 +24,19 @@
             padding: 0;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
 
-        /* --- Header --- */
-        header {
-            padding: 4rem 0 2rem;
-            text-align: center;
-        }
-
+        header { padding: 4rem 0 2rem; text-align: center; }
         h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--accent); }
         .tagline { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 1.5rem; }
         
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            font-size: 1.5rem;
-        }
-
+        .social-links { display: flex; justify-content: center; gap: 1.5rem; font-size: 1.5rem; }
         .social-links a { color: var(--text-primary); transition: color 0.3s; text-decoration: none; }
         .social-links a:hover { color: var(--accent); }
 
-        /* --- Sections --- */
         section { margin-top: 4rem; }
-        h2 { border-bottom: 2px solid var(--card-bg); padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+        h2 { border-bottom: 2px solid var(--card-bg); padding-bottom: 0.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; }
 
-        /* --- Experience Cards --- */
         .card {
             background: var(--card-bg);
             padding: 1.5rem;
@@ -65,36 +48,19 @@
         .card:hover { transform: translateY(-3px); }
         .card-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
         .card-title { font-weight: bold; font-size: 1.1rem; }
-        .card-company { color: var(--accent); font-weight: 600; }
-        .card-date { color: var(--text-secondary); font-size: 0.9rem; }
+        .card-company { color: var(--accent); font-weight: 600; font-size: 0.95rem; }
+        .card-date { color: var(--text-secondary); font-size: 0.85rem; }
+        
+        ul { padding-left: 1.2rem; margin-top: 1rem; color: var(--text-secondary); font-size: 0.95rem; }
+        li { margin-bottom: 0.5rem; }
+        b { color: var(--text-primary); }
 
-        /* --- Skills Grid --- */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-        }
-        .skill-category h3 { font-size: 1rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+        .skill-category h3 { font-size: 1rem; color: var(--accent); margin-bottom: 0.8rem; }
         .skill-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .skill-tag {
-            background: #334155;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-        }
+        .skill-tag { background: #334155; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; color: var(--accent-hover); }
 
-        /* --- Footer --- */
-        footer {
-            text-align: center;
-            padding: 4rem 0 2rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .card-header { flex-direction: column; }
-        }
+        footer { text-align: center; padding: 4rem 0 2rem; color: var(--text-secondary); font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -103,7 +69,10 @@
         <header>
             <h1>Yanzhen (Kevin) Cheng</h1>
             <p class="tagline">M.S. in Electrical & Computer Engineering @ Duke University</p>
-            <p style="max-width: 600px; margin: 0 auto 2rem; color: var(--text-secondary);">
+            <p style="max-width: 650px; margin: 0 auto 2rem; color: var(--text-secondary);">
+                Specializing in <b>Edge AI, LLM Orchestration, and Real-time Data Infrastructure</b>. 
+                Expertise in bridging high-fidelity machine learning models with production-grade reliability and cloud-native infrastructure.
+            </p>
             <div class="social-links">
                 <a href="https://github.com/kevincyz" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/yanzhen-cheng-8160ab20b/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -112,54 +81,85 @@
         </header>
 
         <section id="experience">
-            <h2>Work Experience</h2>
+            <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
             
             <div class="card">
                 <div class="card-header">
-                    <span class="card-title">AI Development Intern</span>
-                    <span class="card-date">Feb 2026 - Present</span>
+                    <span class="card-title">Machine Learning Engineering Intern</span>
+                    <span class="card-date">Feb 2026 – Present</span>
                 </div>
-                <div class="card-company">Vicino Inc. | Remote, U.S. </div>
+                <div class="card-company">Vicino Inc. | Remote</div>
                 <ul>
-                    <li>Fine-tuned <b>Qwen 3.0 VL-32B thinking </b> using LoRA and Llama-factory for high-fidelity image evaluation.</li>
-                    <li>Built an automated evaluation pipeline with a React-based UI, reducing manual feedback loops.</li>
+                    <li>Deployed and fine-tuned <b>Qwen3.0 VL-32B</b> locally using <b>Llama-factory and LoRA</b> for an automated image generation evaluation pipeline.</li>
+                    <li>Integrated the evaluation pipeline into a <b>webpage UI</b>, enabling auto-regeneration of images based on real-time model scoring.</li>
                 </ul>
             </div>
 
             <div class="card">
                 <div class="card-header">
                     <span class="card-title">Software Engineering Intern</span>
-                    <span class="card-date">Summer 2025</span>
+                    <span class="card-date">May 2025 – Aug 2025</span>
                 </div>
                 <div class="card-company">IntBot Inc. | Sunnyvale, CA</div>
                 <ul>
-                    <li>Architected a real-time <b>WebSocket API</b> service to mock OpenAI Realtime, integrated with LiveKit.</li>
-                    <li>Managed cloud-native deployments using <b>Kubernetes and Terraform</b> for scalable audio streaming.</li>
+                    <li>Implemented a real-time <b>WebSocket API</b> service (mock OpenAI Realtime) integrated with <b>LiveKit</b> to support streaming audio and aligned transcription.</li>
+                    <li>Automated testing for over 200 questions using <b>Robot Framework API</b> unit tests, reducing manual operational workload.</li>
+                    <li>Managed independent triage and deployment processes using <b>Kubernetes, Terraform</b>, and <b>Azure Blob Storage</b>.</li>
                 </ul>
             </div>
 
             <div class="card">
                 <div class="card-header">
                     <span class="card-title">LLM Development Intern</span>
-                    <span class="card-date">Summer 2024</span>
+                    <span class="card-date">Jun 2024 – Aug 2024</span>
                 </div>
-                <div class="card-company">Houmo Intelligent Technology | Shanghai</div>
+                <div class="card-company">Houmo Intelligent Technology Co., Ltd | Shanghai, China</div>
                 <ul>
-                    <li>Optimized RAG system accuracy from <b>71% to 80%</b> through hyperparameter tuning and vector search.</li>
-                    <li>Developed feature extraction pipelines for production-level LLM applications.</li>
+                    <li>Tuned a 7B LLM for RAG using <b>Optuna</b>, increasing retrieval accuracy from <b>71% to 80%</b> through hyperparameter and batch-size optimization.</li>
+                    <li>Boosted overall answer quality by <b>8%</b> via rigorous prompt iteration and evaluation-driven refinement.</li>
+                    <li>Built Python utilities to identify ambiguity across 200+ word pairs, improving interpretation consistency.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2><i class="fas fa-code-branch"></i> Key Projects</h2>
+            
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">CyTOF Analysis for Disease Detection</span>
+                    <span class="card-date">Aug 2025 – Present</span>
+                </div>
+                <div class="card-company">Duke University | Durham, NC</div>
+                <ul>
+                    <li>Developing an end-to-end framework for transforming raw <b>FCS files</b> using <b>R and flowcore</b> to enable human-level cell body analysis.</li>
+                    <li>Automated data fetching from databases to virtual machine terminals, supporting direct JSON-format downloads.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Multi-sensor Weather Station</span>
+                    <span class="card-date">May 2022 – Aug 2024</span>
+                </div>
+                <div class="card-company">Wake Forest University | Winston-Salem, NC</div>
+                <ul>
+                    <li>Integrated thermostats onto <b>Arduino Uno</b>, transmitting data to a <b>Raspberry Pi</b> via high-frequency radio.</li>
+                    <li>Combined Purple Air and precipitation sensors via <b>USB byte-reading</b>, uploading data to <b>Grafana</b> every 5s for real-time visualization.</li>
                 </ul>
             </div>
         </section>
 
         <section id="skills">
-            <h2>Technical Stack</h2>
+            <h2><i class="fas fa-tools"></i> Technical Stack</h2>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Languages</h3>
                     <div class="skill-list">
                         <span class="skill-tag">Python</span>
-                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">C/C++</span>
                         <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">R</span>
                         <span class="skill-tag">SQL</span>
                     </div>
                 </div>
@@ -167,49 +167,36 @@
                     <h3>AI & Data</h3>
                     <div class="skill-list">
                         <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">LLM Agents</span>
                         <span class="skill-tag">RAG</span>
-                        <span class="skill-tag">Llama-factory</span>
+                        <span class="skill-tag">LoRA/Fine-tuning</span>
+                        <span class="skill-tag">Optuna</span>
+                        <span class="skill-tag">LangChain</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Infrastructure</h3>
+                    <h3>Systems & Infra</h3>
                     <div class="skill-list">
                         <span class="skill-tag">Kubernetes</span>
                         <span class="skill-tag">Terraform</span>
-                        <span class="skill-tag">GCP/Azure</span>
                         <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Azure/GCP</span>
+                        <span class="skill-tag">Git</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Frontend</h3>
+                    <h3>Hardware/IoT</h3>
                     <div class="skill-list">
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Next.js</span>
-                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">Arduino</span>
+                        <span class="skill-tag">Raspberry Pi</span>
+                        <span class="skill-tag">Grafana</span>
+                        <span class="skill-tag">Sensors</span>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Key Projects</h2>
-            <div class="card">
-                <div class="card-title">Thinking-Model Evaluation Pipeline</div>
-                <p style="font-size: 0.9rem; color: var(--text-secondary);">
-                    Developed a scoring system leveraging the internal reasoning chains of LLMs to validate multimodal outputs.
-                </p>
-            </div>
-            <div class="card">
-                <div class="card-title">Multi-modal Deepfake Detection</div>
-                <p style="font-size: 0.9rem; color: var(--text-secondary);">
-                    Researching robust methods to identify synthetic content across audio and visual modalities.
-                </p>
             </div>
         </section>
 
         <footer>
-            <p>&copy; 2026 Yanzhen (Kevin) Cheng. Built with coffee and AI.</p>
+            <p>&copy; 2026 Yanzhen (Kevin) Cheng. Hand-coded for performance.</p>
         </footer>
     </div>
 
