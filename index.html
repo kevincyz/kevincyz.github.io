@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yanzhen (Kevin) Cheng | AI & Software Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #7dd3fc;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* --- Header --- */
+        header {
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--accent); }
+        .tagline { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 1.5rem; }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .social-links a { color: var(--text-primary); transition: color 0.3s; text-decoration: none; }
+        .social-links a:hover { color: var(--accent); }
+
+        /* --- Sections --- */
+        section { margin-top: 4rem; }
+        h2 { border-bottom: 2px solid var(--card-bg); padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+
+        /* --- Experience Cards --- */
+        .card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent);
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-3px); }
+        .card-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+        .card-title { font-weight: bold; font-size: 1.1rem; }
+        .card-company { color: var(--accent); font-weight: 600; }
+        .card-date { color: var(--text-secondary); font-size: 0.9rem; }
+
+        /* --- Skills Grid --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        .skill-category h3 { font-size: 1rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .skill-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .skill-tag {
+            background: #334155;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 4rem 0 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .card-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Yanzhen (Kevin) Cheng</h1>
+            <p class="tagline">M.S. in Electrical & Computer Engineering @ Duke University</p>
+            <p style="max-width: 600px; margin: 0 auto 2rem; color: var(--text-secondary);">
+                Product-driven Software Engineer specializing in <b>AI Infrastructure, LLM Agents, and Real-time Systems</b>. 
+                Bridging the gap between advanced ML models and production-grade reliability.
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/your-username" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/your-profile" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:yanzhen.cheng@duke.edu"><i class="fas fa-envelope"></i></a>
+            </div>
+        </header>
+
+        <section id="experience">
+            <h2>Work Experience</h2>
+            
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">AI Development Intern</span>
+                    <span class="card-date">2026 - Present</span>
+                </div>
+                <div class="card-company">Vicino Inc. | Sunnyvale, CA</div>
+                <ul>
+                    <li>Fine-tuned <b>Qwen 3.0 VL-8B</b> using LoRA and Llama-factory for high-fidelity image evaluation.</li>
+                    <li>Built an automated evaluation pipeline with a React-based UI, reducing manual feedback loops.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Software Engineering Intern</span>
+                    <span class="card-date">Summer 2025</span>
+                </div>
+                <div class="card-company">IntBot Inc. | Sunnyvale, CA</div>
+                <ul>
+                    <li>Architected a real-time <b>WebSocket API</b> service to mock OpenAI Realtime, integrated with LiveKit.</li>
+                    <li>Managed cloud-native deployments using <b>Kubernetes and Terraform</b> for scalable audio streaming.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">LLM Development Intern</span>
+                    <span class="card-date">Summer 2024</span>
+                </div>
+                <div class="card-company">Houmo Intelligent Technology | Shanghai</div>
+                <ul>
+                    <li>Optimized RAG system accuracy from <b>71% to 80%</b> through hyperparameter tuning and vector search.</li>
+                    <li>Developed feature extraction pipelines for production-level LLM applications.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Stack</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>AI & Data</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">LLM Agents</span>
+                        <span class="skill-tag">RAG</span>
+                        <span class="skill-tag">Llama-factory</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Infrastructure</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Terraform</span>
+                        <span class="skill-tag">GCP/Azure</span>
+                        <span class="skill-tag">Docker</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Key Projects</h2>
+            <div class="card">
+                <div class="card-title">Thinking-Model Evaluation Pipeline</div>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                    Developed a scoring system leveraging the internal reasoning chains of LLMs to validate multimodal outputs.
+                </p>
+            </div>
+            <div class="card">
+                <div class="card-title">Multi-modal Deepfake Detection</div>
+                <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                    Researching robust methods to identify synthetic content across audio and visual modalities.
+                </p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Yanzhen (Kevin) Cheng. Built with coffee and AI.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
