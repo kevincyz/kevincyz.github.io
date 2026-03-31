@@ -7,16 +7,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --bg: #0f172a;
-            --card-bg: #1e293b;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent: #38bdf8;
-            --accent-hover: #7dd3fc;
+            --bg: #ffffff; /* White background */
+            --card-bg: #f8fafc; /* Very light grey card background */
+            --text-primary: #0f172a; /* Dark text for contrast */
+            --text-secondary: #475569; /* Medium dark grey for secondary text */
+            --accent: #0284c7; /* A richer blue, better suited for white theme */
+            --accent-hover: #0369a1; /* Darker blue for hover feedback */
+            --border-color: #e2e8f0; /* Light border color for consistency */
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg);
             color: var(--text-primary);
             line-height: 1.6;
@@ -24,30 +25,51 @@
             padding: 0;
         }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
 
-        header { padding: 4rem 0 2rem; text-align: center; }
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--accent); }
-        .tagline { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 1.5rem; }
+        /* --- Header --- */
+        header {
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--text-primary); }
+        .tagline { font-size: 1.2rem; color: var(--accent); margin-bottom: 1.5rem; font-weight: 500; }
         
-        .social-links { display: flex; justify-content: center; gap: 1.5rem; font-size: 1.5rem; }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            font-size: 1.5rem;
+        }
+
         .social-links a { color: var(--text-primary); transition: color 0.3s; text-decoration: none; }
         .social-links a:hover { color: var(--accent); }
 
+        /* --- Sections --- */
         section { margin-top: 4rem; }
-        h2 { border-bottom: 2px solid var(--card-bg); padding-bottom: 0.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; }
+        h2 { border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; color: var(--text-primary); }
 
+        /* --- Education/Experience Cards --- */
         .card {
             background: var(--card-bg);
             padding: 1.5rem;
             border-radius: 8px;
             margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color); /* Add border for structure on white bg */
             border-left: 4px solid var(--accent);
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .card:hover { transform: translateY(-3px); }
+        .card:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
         .card-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
-        .card-title { font-weight: bold; font-size: 1.1rem; }
+        .card-title { font-weight: 700; font-size: 1.1rem; color: var(--text-primary); }
         .card-company { color: var(--accent); font-weight: 600; font-size: 0.95rem; }
         .card-date { color: var(--text-secondary); font-size: 0.85rem; }
         
@@ -55,12 +77,40 @@
         li { margin-bottom: 0.5rem; }
         b { color: var(--text-primary); }
 
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
-        .skill-category h3 { font-size: 1rem; color: var(--accent); margin-bottom: 0.8rem; }
-        .skill-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .skill-tag { background: #334155; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; color: var(--accent-hover); }
+        .coursework { font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; font-style: italic; }
 
-        footer { text-align: center; padding: 4rem 0 2rem; color: var(--text-secondary); font-size: 0.9rem; }
+        /* --- Skills Grid --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        .skill-category h3 { font-size: 1rem; color: var(--text-primary); margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;}
+        .skill-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .skill-tag {
+            background: #ffffff; /* Contrast skills against grey card */
+            border: 1px solid var(--border-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 4rem 0 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .card-header { flex-direction: column; align-items: flex-start; gap: 0.2rem;}
+        }
     </style>
 </head>
 <body>
@@ -71,7 +121,7 @@
             <p class="tagline">M.S. in Electrical & Computer Engineering @ Duke University</p>
             <p style="max-width: 650px; margin: 0 auto 2rem; color: var(--text-secondary);">
                 Specializing in <b>Edge AI, LLM Orchestration, and Real-time Data Infrastructure</b>. 
-                Expertise in bridging high-fidelity machine learning models with production-grade reliability and cloud-native infrastructure.
+                Bridging the gap between advanced ML models and production-grade reliability.
             </p>
             <div class="social-links">
                 <a href="https://github.com/kevincyz" target="_blank"><i class="fab fa-github"></i></a>
@@ -79,6 +129,34 @@
                 <a href="mailto:yanzhen.cheng@duke.edu"><i class="fas fa-envelope"></i></a>
             </div>
         </header>
+
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Master of Science in Electrical and Computer Engineering</span>
+                    <span class="card-date">Aug 2024 – May 2026 (Expected)</span>
+                </div>
+                <div class="card-company">Duke University | Durham, NC</div>
+                <div style="font-size: 0.9rem; margin-top: 0.3rem;">Concentration: Machine Learning / Big Data</div>
+                <div class="coursework">
+                    <b>Relevant Coursework:</b> Probabilistic ML, NLP, Computer Engineering, Machine Learning and Deep Neural Nets, Intro to Deep Learning, Theory and Algorithms for ML, Stable Diffusion Models.
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title">Bachelor of Science in Engineering</span>
+                    <span class="card-date">Aug 2020 – May 2024</span>
+                </div>
+                <div class="card-company">Wake Forest University | Winston-Salem, NC</div>
+                <div style="font-size: 0.9rem; margin-top: 0.3rem;">Concentration: Electrical Engineering | Minor: Computer Science</div>
+                <div class="coursework">
+                    <b>Relevant Coursework:</b> Data Structures & Algorithms, Software Engineering, NN & Deep Learning, Computer Systems.
+                </div>
+            </div>
+        </section>
 
         <section id="experience">
             <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
@@ -90,8 +168,8 @@
                 </div>
                 <div class="card-company">Vicino Inc. | Remote</div>
                 <ul>
-                    <li>Deployed and fine-tuned <b>Qwen3.0 VL-32B</b> locally using <b>Llama-factory and LoRA</b> for an automated image generation evaluation pipeline.</li>
-                    <li>Integrated the evaluation pipeline into a <b>webpage UI</b>, enabling auto-regeneration of images based on real-time model scoring.</li>
+                    <li>Deployed and fine-tuned <b>Qwen3.0 VL-32B thinking-model</b> locally using <b>Llama-factory and LoRA</b> for high-fidelity image evaluation.</li>
+                    <li>Integrated the evaluation pipeline into a webpage UI, enabling auto-regeneration of images based on real-time model scoring.</li>
                 </ul>
             </div>
 
@@ -102,9 +180,8 @@
                 </div>
                 <div class="card-company">IntBot Inc. | Sunnyvale, CA</div>
                 <ul>
-                    <li>Implemented a real-time <b>WebSocket API</b> service (mock OpenAI Realtime) integrated with <b>LiveKit</b> to support streaming audio and aligned transcription.</li>
-                    <li>Automated testing for over 200 questions using <b>Robot Framework API</b> unit tests, reducing manual operational workload.</li>
-                    <li>Managed independent triage and deployment processes using <b>Kubernetes, Terraform</b>, and <b>Azure Blob Storage</b>.</li>
+                    <li>Implemented a real-time <b>WebSocket API</b> service (mock OpenAI Realtime) integrated with <b>LiveKit</b> for streaming audio and aligned transcription.</li>
+                    <li>Managed triage and cloud-native deployments using <b>Kubernetes, Terraform</b>, and Azure storage.</li>
                 </ul>
             </div>
 
@@ -115,9 +192,8 @@
                 </div>
                 <div class="card-company">Houmo Intelligent Technology Co., Ltd | Shanghai, China</div>
                 <ul>
-                    <li>Tuned a 7B LLM for RAG using <b>Optuna</b>, increasing retrieval accuracy from <b>71% to 80%</b> through hyperparameter and batch-size optimization.</li>
-                    <li>Boosted overall answer quality by <b>8%</b> via rigorous prompt iteration and evaluation-driven refinement.</li>
-                    <li>Built Python utilities to identify ambiguity across 200+ word pairs, improving interpretation consistency.</li>
+                    <li>Tuned a 7B LLM for RAG using <b>Optuna</b>, increasing retrieval accuracy from <b>71% to 80%</b> through hyperparameter optimization.</li>
+                    <li>Boosted answer quality by <b>8%</b> via rigorous prompt iteration and evaluation-driven refinement.</li>
                 </ul>
             </div>
         </section>
@@ -132,8 +208,7 @@
                 </div>
                 <div class="card-company">Duke University | Durham, NC</div>
                 <ul>
-                    <li>Developing an end-to-end framework for transforming raw <b>FCS files</b> using <b>R and flowcore</b> to enable human-level cell body analysis.</li>
-                    <li>Automated data fetching from databases to virtual machine terminals, supporting direct JSON-format downloads.</li>
+                    <li>Developing a framework for transforming raw <b>FCS files</b> using <b>R and flowcore</b> to enable human-level cell body analysis.</li>
                 </ul>
             </div>
 
@@ -144,8 +219,7 @@
                 </div>
                 <div class="card-company">Wake Forest University | Winston-Salem, NC</div>
                 <ul>
-                    <li>Integrated thermostats onto <b>Arduino Uno</b>, transmitting data to a <b>Raspberry Pi</b> via high-frequency radio.</li>
-                    <li>Combined Purple Air and precipitation sensors via <b>USB byte-reading</b>, uploading data to <b>Grafana</b> every 5s for real-time visualization.</li>
+                    <li>Integrated thermostats and air-quality sensors with <b>Arduino</b> and <b>Raspberry Pi</b>, uploading data to <b>Grafana</b> every 5s for visualization.</li>
                 </ul>
             </div>
         </section>
@@ -169,8 +243,8 @@
                         <span class="skill-tag">PyTorch</span>
                         <span class="skill-tag">RAG</span>
                         <span class="skill-tag">LoRA/Fine-tuning</span>
+                        <span class="skill-tag">Stable Diffusion</span>
                         <span class="skill-tag">Optuna</span>
-                        <span class="skill-tag">LangChain</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -180,7 +254,7 @@
                         <span class="skill-tag">Terraform</span>
                         <span class="skill-tag">Docker</span>
                         <span class="skill-tag">Azure/GCP</span>
-                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">WebSockets</span>
                     </div>
                 </div>
                 <div class="skill-category">
